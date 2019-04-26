@@ -1,0 +1,9 @@
+# ignore all
+*
+
+# except
+!.meta
+!.gitignore
+!package.json
+!yarn.lock
+!README.md
