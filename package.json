@@ -1,18 +1,17 @@
 {
-    "name": "fbl-plugins",
-    "version": "1.0.0",
-    "description": "rga-railway meta project",
-    "scripts": {
-      "clone": "meta git update && yarn meta clone .",
-      "pull": "yarn meta fetch && yarn meta pull",
-      "checkout": "yarn meta git checkout"    
-    },
-    "repository": "git@github.com:FireBlinkLTD/fbl-plugins.git",
-    "author": "Vlad Tkachenko <vlad@fireblink.com>",
-    "license": "MIT",
-    "private": true,
-    "dependencies": {
-      "meta": "1.2.16"
-    }
+  "name": "fbl-plugins",
+  "version": "1.0.0",
+  "description": "rga-railway meta project",
+  "scripts": {
+    "clone": "meta git update && yarn meta clone .",
+    "pull": "yarn meta git fetch && yarn meta git pull",
+    "checkout": "yarn meta git checkout"
+  },
+  "repository": "git@github.com:FireBlinkLTD/fbl-plugins.git",
+  "author": "Vlad Tkachenko <vlad@fireblink.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "meta": "1.2.16"
   }
-  
+}
