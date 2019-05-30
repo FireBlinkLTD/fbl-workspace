@@ -12,6 +12,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "meta": "1.2.16"
+    "meta": "1.2.19"
   }
 }
