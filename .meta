@@ -7,6 +7,8 @@
     "@fbl-plugins/k8s-kubectl": "git@github.com:FireBlinkLTD/fbl-plugins-k8s-kubectl.git",
     
     "fbl": "git@github.com:FireBlinkLTD/fbl.git",
-    "fbl-plugin-template": "git@github.com:FireBlinkLTD/fbl-plugin-template.git"
+    
+    "templates/fbl-plugin-template": "git@github.com:FireBlinkLTD/fbl-plugin-template.git",
+    "templates/fbl-vault-flow-template": "git@github.com:FireBlinkLTD/fbl-vault-flow-template.git"
   }
 }
