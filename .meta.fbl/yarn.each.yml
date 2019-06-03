@@ -1,0 +1,18 @@
+pipeline:
+  '--':
+    - '@': 'utilities/read.meta.yml'
+    - '@': 'utilities/find.package.json.yml'
+    
+    - each:
+        of: $ref:ctx.packageJsonFiles
+        action:
+          $parameters:
+            path: <%- $.require('path').dirname(iteration.value) %>
+          '--':
+            - echo: 'Runnin "yarn <$- parameters.args.join(' ') $>" over <%- parameters.path %>'
+            - exec:
+                command: yarn
+                args: $ref:parameters.args                  
+                wd: $ref:parameters.path
+                options:
+                  verbose: true
