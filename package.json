@@ -5,13 +5,16 @@
   "scripts": {
     "clone": "meta git update && yarn meta clone .",
     "pull": "yarn meta git fetch && yarn meta git pull",
-    "checkout": "yarn meta git checkout"
+    "checkout": "yarn meta git checkout",
+    "install:all": "yarn fbl .meta.fbl/yarn.install.yml",
+    "build:all": "yarn fbl .meta.fbl/yarn.build.yml"
   },
   "repository": "git@github.com:FireBlinkLTD/fbl-plugins.git",
   "author": "Vlad Tkachenko <vlad@fireblink.com>",
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "fbl": "^1.7.2",
     "meta": "1.2.16"
   }
 }

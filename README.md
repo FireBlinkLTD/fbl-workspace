@@ -13,4 +13,10 @@ yarn clone
 
 # switch branch across all repos
 yarn checkout <branch>
+
+# install node dependencies across all nested repositories
+yarn install:all
+
+# build node modules across all nested repositories
+yarn build:all
 ```
