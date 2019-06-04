@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "rga-railway meta project",
   "scripts": {
-    "clone": "meta git update && yarn meta clone .",
+    "update:gitmodules": "yarn fbl .meta.fbl/update.gitmodules.yml",
+    "clone": "meta git update && yarn meta clone . && yarn update:gitmodules",
     "pull": "yarn meta git fetch && yarn meta git pull",
     "checkout": "yarn meta git checkout",
-    "install:all": "yarn fbl .meta.fbl/yarn.install.yml",
-    "build:all": "yarn fbl .meta.fbl/yarn.build.yml"
+    "install:all": "yarn fbl -a \\$.parameters.args=[\"install\"] .meta.fbl/yarn.install.yml",
+    "build:all": "yarn fbl .meta.fbl/yarn.build.yml"    
   },
   "repository": "git@github.com:FireBlinkLTD/fbl-plugins.git",
   "author": "Vlad Tkachenko <vlad@fireblink.com>",
