@@ -1,3 +1,6 @@
+description: |
+  Script that allows to create git branch in every selected repository.
+
 pipeline:
   '--':
     - '@': 'utilities/read.meta.yml'

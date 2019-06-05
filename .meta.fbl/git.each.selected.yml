@@ -1,6 +1,11 @@
+
+description: |
+  FBL script that allows to run git command over every selected repository.
+
 requires:
   applications:
     - git
+
 pipeline:
   '--':
     - '@': 'utilities/read.meta.yml'

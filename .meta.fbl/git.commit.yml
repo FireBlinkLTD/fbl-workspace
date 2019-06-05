@@ -1,3 +1,7 @@
+description: |
+  Script that allows to commit added previously files in every selected repository with message
+  that follows conventional changelog.
+
 pipeline:
   '--':
     - '@': 'utilities/read.meta.yml'
@@ -67,15 +71,12 @@ pipeline:
           $parameters:
             path: ../<%- iteration.value %>
           '--':
-            - echo: |-
-                Making commit in <%- parameters.path %> with message: 
-                <%- ctx.git.message.join("\n") %>
             - exec:
                 command: git
                 args: 
                   - commit 
                   - -m
-                  - '"<%- ctx.git.message.join("\n") %>"'
+                  - '"<%- ctx.message.final %>"'
                 wd: $ref:parameters.path
                 options:
                   verbose: true

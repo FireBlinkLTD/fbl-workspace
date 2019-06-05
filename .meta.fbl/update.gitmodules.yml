@@ -1,6 +1,8 @@
-# VSCode in unable to highlight VCS changes in meta repository
-# To bypass that limitation this simple script generated .gitmodules file based on .meta content
-# Note: make sure .gitmodules file is git ignored.
+description: |
+  VSCode in unable to highlight VCS changes in meta repository
+  To bypass that limitation this simple script generated .gitmodules file based on .meta content
+  Note: make sure .gitmodules file is git ignored.
+
 pipeline:
   '--':
     - '@': 'utilities/read.meta.yml'
