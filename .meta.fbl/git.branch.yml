@@ -1,0 +1,33 @@
+pipeline:
+  '--':
+    - '@': 'utilities/read.meta.yml'
+    - '@': 'utilities/select.repos.yml'
+    - prompt:
+        message: 'Branch name:'
+        assignResponseTo: $.ctx.git.branch
+        
+    - each:
+        of: $ref:ctx.selected
+        action:
+          $parameters:
+            path: ../<%- iteration.value %>
+          '--':
+            - echo: 'Changing branch "<%- ctx.git.branch %>" in <%- parameters.path %>'
+            - try:
+                action:       
+                  exec:
+                    command: git
+                    args: 
+                      - branch 
+                      - $ref:ctx.git.branch            
+                    wd: $ref:parameters.path                   
+                finally:
+                  exec:
+                    command: git
+                    args: 
+                      - checkout 
+                      - $ref:ctx.git.branch            
+                    wd: $ref:parameters.path
+                    options:
+                      verbose: true
+                      

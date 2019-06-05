@@ -1,0 +1,82 @@
+pipeline:
+  '--':
+    - '@': 'utilities/read.meta.yml'
+    - '@': 'utilities/select.repos.yml'
+
+    - select:
+        message: "Select the type of the change that you're commiting:"
+        assignResponseTo: $.ctx.message.type
+        options:
+          - title: 'feat:     A new feature'
+            value: feat
+          - title: 'fix:      A bug fix'
+            value: fix
+          - title: 'docs:     Documentation only changes'
+            value: docs
+          - title: 'style:    Changes that do not affect meaning of the code'
+            value: style
+          - title: 'refactor: A code change that neither fixes a bug or adds a feature'
+            value: refactor
+          - title: 'perf:     A code change that improves performance'
+            value: perf
+          - title: 'test:     A code change that effects tests'
+            value: test
+          - title: 'chore:    Changes related to build processes and tools'
+            value: chore                  
+
+    - prompt:
+        message: What is the scope of this change (e.g. component or file name)?
+        assignResponseTo: $.ctx.message.scope
+
+    - prompt:
+        message: 'Write a short, imperative tense description of the change:'
+        assignResponseTo: $.ctx.message.short
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 80
+
+
+    - prompt:
+        message: 'Provide a longer description of the change:'
+        assignResponseTo: $.ctx.message.long
+
+    - prompt:
+        message: 'Provide braking changes if any:'
+        assignResponseTo: $.ctx.message.breakingChanges
+
+    - prompt:
+        message: 'Provide related issues if any (e.g. "fix #123", "re #123".):'
+        assignResponseTo: $.ctx.message.relatedIssues
+
+    - ctx:
+        $.message.final:
+          inline: |-
+            <%- ctx.message.type %><% if(ctx.message.scope) { %>(<%- ctx.message.scope %>)<% } %>: <%- ctx.message.short %>
+            <% if(ctx.message.long) { %><%- ctx.message.long %>
+            
+            <% } %><% if(ctx.message.breakingChanges) { %>BREAKING CHANGE: (<%- ctx.message.breakingChanges %>)
+            
+            <% } %><% if(ctx.message.relatedIssues) { %><%- ctx.message.relatedIssues %>
+            
+            <% } %>
+
+    - each:
+        of: $ref:ctx.selected
+        action:
+          $parameters:
+            path: ../<%- iteration.value %>
+          '--':
+            - echo: |-
+                Making commit in <%- parameters.path %> with message: 
+                <%- ctx.git.message.join("\n") %>
+            - exec:
+                command: git
+                args: 
+                  - commit 
+                  - -m
+                  - '"<%- ctx.git.message.join("\n") %>"'
+                wd: $ref:parameters.path
+                options:
+                  verbose: true
+                      

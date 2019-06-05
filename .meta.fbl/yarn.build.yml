@@ -1,5 +1,0 @@
-pipeline:
-  $parameters:
-    args:
-      - build
-  '@': yarn.each.yml
