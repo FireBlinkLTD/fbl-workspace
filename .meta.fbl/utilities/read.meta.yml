@@ -1,0 +1,5 @@
+pipeline:
+  ctx: 
+    '$.meta':
+      files: 
+        - ../../.meta  

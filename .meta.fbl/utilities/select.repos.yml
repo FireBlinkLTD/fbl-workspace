@@ -1,0 +1,9 @@
+# requires read.meta.yml to be processed earlier
+pipeline:
+  multiselect:
+    message: 'Select repositories:'
+    options: 
+      <$ for(const name of Object.keys(ctx.meta.projects)) { $>
+      - "<$- name $>"
+      <$ } $>
+    assignResponseTo: $.ctx.selected    
