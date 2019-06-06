@@ -5,14 +5,14 @@
   "scripts": {
     "update:gitmodules": "yarn fbl .meta.fbl/update.gitmodules.yml",
     "clone": "meta git update && yarn meta clone . && yarn update:gitmodules",
-    "pull": "yarn meta git fetch && yarn meta git pull",
+    "pull": "yarn meta git fetch && yarn meta git pull --rebase --autostash",
+    "push": "yarn meta push",
     "checkout": "yarn meta git checkout",
     "install:all": "yarn fbl -a \\$.parameters.args=%[\\\"install\\\"] .meta.fbl/yarn.each.yml",
     "build:all": "yarn fbl -a \\$.parameters.args=%[\\\"build\\\"] .meta.fbl/yarn.each.yml",
     "upgrade:all": "yarn fbl -a \\$.parameters.args=%[\\\"upgrade\\\",\\\"--latest\\\"] .meta.fbl/yarn.each.yml",
     "git:branch": "yarn fbl .meta.fbl/git.branch.yml",
-    "git:commit": "yarn fbl .meta.fbl/git.commit.yml",
-    "git:push": "yarn fbl -a \\$.parameters.args=%[\\\"push\\\",\\\"-u\\\",\\\"origin\\\",\\\"HEAD\\\"] .meta.fbl/git.each.selected.yml"
+    "git:commit": "yarn fbl .meta.fbl/git.commit.yml"
   },
   "repository": "git@github.com:FireBlinkLTD/fbl-plugins.git",
   "author": "Vlad Tkachenko <vlad@fireblink.com>",

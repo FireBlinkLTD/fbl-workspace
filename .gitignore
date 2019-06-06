@@ -3,6 +3,7 @@
 
 # except
 !.meta
+!.meta.fbl
 !.meta.fbl/**
 !.gitignore
 !package.json
