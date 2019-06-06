@@ -6,7 +6,7 @@
     "update:gitmodules": "yarn fbl .meta.fbl/update.gitmodules.yml",
     "clone": "meta git update && yarn meta clone . && yarn update:gitmodules",
     "pull": "yarn meta git fetch && yarn meta git pull --rebase --autostash",
-    "push": "yarn meta push",
+    "push": "yarn meta git push",
     "checkout": "yarn meta git checkout",
     "install:all": "yarn fbl -a \\$.parameters.args=%[\\\"install\\\"] .meta.fbl/yarn.each.yml",
     "build:all": "yarn fbl -a \\$.parameters.args=%[\\\"build\\\"] .meta.fbl/yarn.each.yml",
