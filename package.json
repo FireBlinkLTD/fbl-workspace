@@ -12,7 +12,8 @@
     "build:all": "yarn fbl -a \\$.parameters.args=%[\\\"build\\\"] .meta.fbl/yarn.each.yml",
     "upgrade:all": "yarn fbl -a \\$.parameters.args=%[\\\"upgrade\\\",\\\"--latest\\\"] .meta.fbl/yarn.each.yml",
     "git:branch": "yarn fbl .meta.fbl/git.branch.yml",
-    "git:commit": "yarn fbl .meta.fbl/git.commit.yml"
+    "git:commit": "yarn fbl .meta.fbl/git.commit.yml",
+    "new:plugin": "fbl templates/fbl-plugin-template"
   },
   "repository": "git@github.com:FireBlinkLTD/fbl-plugins.git",
   "author": "Vlad Tkachenko <vlad@fireblink.com>",
@@ -20,6 +21,6 @@
   "private": true,
   "dependencies": {
     "fbl": "1.7.4",
-    "meta": "1.2.16"
+    "meta": "2.2.4"
   }
 }
