@@ -1,7 +1,7 @@
 {
-  "name": "fbl-plugins",
+  "name": "fbl-workspace",
   "version": "1.0.0",
-  "description": "rga-railway meta project",
+  "description": "fbl meta project",
   "scripts": {
     "update:gitmodules": "yarn fbl .meta.fbl/update.gitmodules.yml",
     "clone": "meta git update && yarn meta clone . && yarn update:gitmodules",
