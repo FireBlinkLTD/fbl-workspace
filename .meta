@@ -2,6 +2,7 @@
   "projects": {
     "@fbl-plugins/crypto": "git@github.com:FireBlinkLTD/fbl-plugins-crypto.git",
     "@fbl-plugins/html-to-pdf": "git@github.com:FireBlinkLTD/fbl-plugins-html-to-pdf.git",
+    "@fbl-plugins/html-to-img": "git@github.com:FireBlinkLTD/fbl-plugins-html-to-img.git",
     "@fbl-plugins/http": "git@github.com:FireBlinkLTD/fbl-plugins-http.git",
     "@fbl-plugins/k8s-helm": "git@github.com:FireBlinkLTD/fbl-plugins-k8s-helm.git",
     "@fbl-plugins/k8s-kubectl": "git@github.com:FireBlinkLTD/fbl-plugins-k8s-kubectl.git",
