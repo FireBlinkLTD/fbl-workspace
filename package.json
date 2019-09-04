@@ -20,7 +20,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "fbl": "1.7.4",
-    "meta": "2.2.4"
+    "fbl": "1.9.2",
+    "meta": "2.2.6"
   }
 }
